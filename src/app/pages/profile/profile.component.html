@@ -1,0 +1,12 @@
+<h1>Profile Page</h1>
+<hr>
+
+
+
+<ul *ngIf="authService.user$ | async as user">
+  <li>{{ user.name }}</li>
+  <li>{{ user.email }}</li>
+  <li>
+    <img [src]="user.picture" alt="Profile picture" />
+  </li>
+</ul>

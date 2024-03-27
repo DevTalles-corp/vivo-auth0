@@ -1,0 +1,23 @@
+<h1>Home Page</h1>
+<hr />
+
+
+<h3>Auth Status: {{ authService.isAuthenticated$ | async  }}</h3>
+<h3>Loading: {{ authService.isLoading$ | async  }}</h3>
+
+
+@if ( authService.isAuthenticated$ | async ) {
+  <button (click)="authService.logout()">
+    Logout
+  </button>
+} @else {
+
+  <button (click)="authService.loginWithRedirect()">Login with redirect</button>
+
+  &nbsp;
+
+  <button (click)="authService.loginWithPopup()">Login with popup</button>
+
+}
+
+
